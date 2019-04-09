@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    webapp:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        command: ["nginx", "-g", "daemon off;"]
+        user: nobody
+        restart: always
+        ports:
+            - "80:8000"
+            
